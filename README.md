@@ -1,5 +1,5 @@
 
-# WordWise
+# SmartWord
 ---
 <img src='img/128.png'>
 

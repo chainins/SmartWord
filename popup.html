@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>HiJury</title>
+  <meta name="viewport" content="width=device-width">
+  
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta name="google-signin-client_id" content="689401839252-0s20kri32or5vo9rvorsjcoul7tojk0m.apps.googleusercontent.com">
+
+</head>
+
+<body>
+  <div class='bold-line'></div>
+<div class='container'>
+  <div class='window'>
+    <div class='overlay'></div>
+    <div class='content'>
+		<div id="txtTitle" class='topic'>SmartWord</div>
+	  <div style="width:400px;height:1px; dotted; background: #f7e7e7;margin-bottom: 10px;"></div>  
+	  <div id ="pageline" style= "display: none;width:400px;height:1px; dotted; background: #f7e7e7;margin-bottom: 10px;"></div>			
+	  <div  id = 'wholeBox' style= "display: block;">
+		<div  id = 'myAccountInfo' style= "display: none;">
+			<div  id = 'myDIbox' class='info-container'>
+				<div id="txtMyDI" class='info'>Define My DI</div>
+				<div  class='textarea-fields' >
+					<input id = "sliderDI" type = "range" min = "1" max = "52" value = "50" class = "myslider" >
+					<span id="myDI"  style="width:20px;display:inline;"></span>
+
+					<div class="tooltip"  style="float:right;width:20px;display:inline;">
+						<i class="fa fa-question-circle"></i>
+						<span class="tooltiptext1">DI means Difficulty Index. Move the slider rightforth, until you don't know the words below. If you're not sure, please accept the suggested DI below.</span>
+					</div>
+				</div>
+			</div>
+		
+			<div  id = 'myRawWordsbox' class='info-container'>
+				<div  id="txtMyRowWords" class='info'>My Raw Words</div>
+				<div class='textarea-fields'>
+					<textarea id='myRawWords' type='text' placeholder='some examples here.' class='textarea-multiline full-width'  rows="3"></textarea>
+				</div>		
+			</div>
+
+			<div  id = 'suggestDIbox' style= "display: block;">
+				<div class='info-container'>
+					<div id="txtSuggestDI" class='info'>Suggested DI</div>
+					
+					<div class = "rangeslider">
+						<!-- <span id="rateDI" style="float:left;width:200px;display:inline;"></span> -->
+						<span id="suggestDI"  style="float:left;width:20px;display:inline;">8</span>
+
+						<div class="tooltip"  style="float:right;width:20px;display:inline;">
+							<i class="fa fa-question-circle"></i>
+							<span class="tooltiptext2">DI means Difficulty Index. If you're not sure, please accept the suggested value here. The program will adjust suggested DI automatically.</span>
+						</div>
+					</div>
+				</div>
+				
+					
+				<div class='info-container'>
+				<div  id="txtSuggestRowWords" class='info'>Example Raw Words</div>
+				<div class='textarea-fields'>
+					<textarea id='suggestRawWords' type='text' placeholder='some examples here.' class='textarea-multiline full-width'  rows="3"></textarea>
+				</div>
+		
+			</div>
+
+	    </div> 
+
+		<div><button id="submitreview" style="display:none;" class='ghost-round full-width'>Save/Update Config</button></div>
+		</div>
+  
+		<div id = 'myinfo' style="display:none;">
+		<div class='info-container' >
+		  <div  id="txtMyCredit" class='info'>My Credit</div>
+		  <div><span id='credit' class='highlight'></span></div>
+		</div>
+		<div class='info-container'>
+		  <div  id="txtMyContrib" class='info'>My Contribution</div>
+		  <div><span id='contrib' class='highlight'></span></div>
+		</div>
+		</div>
+		<div><button id="logout" style="display:none;" class='ghost-round full-width'>Logout</button></div>
+
+		<div id = 'login' style= "display: block;" >
+  
+		<div  id="txtWithAccount" class='spacing'>or with <span class='highlight'>Creating An Account</span></div>
+		<div class='input-fields'>
+		  <input id='username' type='text' placeholder='Username(not necessary)' class='input-line full-width'></input>
+		  <input id='email' type='email' placeholder='Email*' class='input-line full-width'></input>
+		  <input id='password' type='password' placeholder='Password*(at least 8 characters)' class='input-line full-width'></input>
+		</div>
+		<div><button id="login_email" class='ghost-round full-width'>Submit & Create Account</button></div>
+		<div class="tableli">
+		  <ul>
+		  <li>
+		  <div for="remember" class="checkboxes">
+		  <label><input type="checkbox" id="remember2" name="remember2" value="1" class="rememberCheckbox"> <span  id="txtRememberAccount">Remember Me</span></label>
+		  </li>
+		  </ul>
+		</div>
+   
+ 	  </div>
+
+
+		<div id="footer">
+			<ul class="copyright">
+			<li>Smart.</li><li>Wise.</li><li>English.</li><li>Word.</li><li>&copy; SmartWord.</li>
+			</ul>
+		</div>
+	    <div id="NoticeBox" style="text-align: center;" >
+			<span id="notice" style="text-align: center;font-family: Helvetica;font-size:12px;color:#f3e142">Notice: Pls notice this notice.</span>
+		</div>
+ 
+	</div>
+  </div>
+</div>
+  
+
+<div id="light" class="white_content" display="none">
+	<span id = "txtConfirmReview">
+	</span>
+	<button id="goback"  style="height:38px;width:100px;border-radius: 12px;font-size: 18px;border:1px solid #b9e58f69;background-color: #4CAF50; color:white;" >Go Back</button>
+</div> 
+<div id="fade" class="black_overlay" display="none"></div>
+ 
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/detectLang.js"></script>
+<script type="text/javascript" src="js/reviews.js"></script>
+<script type="text/javascript" src="js/sha512.js"></script>
+</body>
+</html>
